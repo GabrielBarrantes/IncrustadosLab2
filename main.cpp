@@ -25,7 +25,7 @@ void main(void)
     Setup();
     // - Attach the Tasks to the Scheduler;
     g_MainScheduler.attach(&BlueLED,TaskType_Periodic, TaskActiveTrue,500);
-    g_MainScheduler.attach(&GreenLED, TaskType_Periodic,TaskActiveTrue,1000);
+    g_MainScheduler.attach(&GreenLED, TaskType_Periodic,TaskActiveFalse,1000);
     // - Run the Setup for the scheduler and all tasks
     g_MainScheduler.setup();
     // - Main Loop
