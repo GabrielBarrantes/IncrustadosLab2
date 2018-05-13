@@ -10,6 +10,12 @@
 uint8_t Task::m_u8NextTaskID = 0; // - Init task ID
 
 volatile static uint64_t g_SystemTicks = 0; // - The system counter.
+
+uint16_t x = 0U;
+uint16_t y = 0U;
+uint16_t z = 0U;
+
+
 Mailbox* g_Mailbox = Mailbox::getMailbox();
 Scheduler g_MainScheduler; // - Instantiate a Scheduler
 
@@ -25,7 +31,7 @@ void main(void)
     Setup();
     // - Attach the Tasks to the Scheduler;
     g_MainScheduler.attach(&BlueLED,TaskType_Periodic, TaskActiveTrue,500);
-    g_MainScheduler.attach(&GreenLED, TaskType_Periodic,TaskActiveFalse,1000);
+    g_MainScheduler.attach(&GreenLED, TaskType_Periodic,TaskActiveTrue,1000);
     // - Run the Setup for the scheduler and all tasks
     g_MainScheduler.setup();
     // - Main Loop
@@ -86,5 +92,21 @@ extern "C"
 		P1->OUT ^= BIT0; // - Toggle the heart beat indicator (1ms)
 		g_SystemTicks++;
 		return;
+	}
+
+	void ADC14_IRQHandler(void)
+	{
+	    __disable_irq();
+
+	    //ENVIAR MENSAJE AL SHEDUCLER CON LAS COORDENADAS
+
+	    x=ADC14->MEM[0];
+	    y=ADC14->MEM[1];
+	    z=ADC14->MEM[2];
+
+
+	    ADC14->CLRIFGR0 = ADC14_CLRIFGR0_CLRIFG0;
+	    __enable_irq();
+	    return;
 	}
 }
