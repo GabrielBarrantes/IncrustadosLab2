@@ -43,7 +43,7 @@
 //*****************************************************************************
 
 #include <stdint.h>
-#include "msp.h"
+#include <ti/devices/msp432p4xx/inc/msp.h>//#include "msp.h"
 
 /*--------------------- Configuration Instructions ----------------------------
    1. If you prefer to halt the Watchdog Timer, set __HALT_WDT to 1:
@@ -68,7 +68,7 @@
 //     <12000000> 12 MHz
 //     <24000000> 24 MHz
 //     <48000000> 48 MHz
-#define  __SYSTEM_CLOCK    3000000
+#define  __SYSTEM_CLOCK    48000000
 
 /*--------------------- Power Regulator Configuration -----------------------*/
 //  Power Regulator Mode

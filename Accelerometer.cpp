@@ -7,10 +7,10 @@
 
 #include "Accelerometer.hpp"
 
-Accelerometer::Accelerometer()
+/*Accelerometer::Accelerometer()
 {
     //m_u16BITN = i_BITN;
-}
+}*/
 
 uint8_t Accelerometer::run()
 {

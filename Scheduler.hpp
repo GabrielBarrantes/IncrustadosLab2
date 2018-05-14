@@ -7,7 +7,7 @@
 
 #ifndef TASKS_SCHEDULER_HPP_
 #define TASKS_SCHEDULER_HPP_
-#include "msp.h"
+#include <ti/devices/msp432p4xx/inc/msp.h>//#include "msp.h"
 #include "Task.hpp"
 #include "Mailbox.hpp"
 #include <stdlib.h>

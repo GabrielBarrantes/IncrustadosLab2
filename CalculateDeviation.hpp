@@ -1,22 +1,24 @@
 /*
- * Accelerometer.hpp
+ * CalculateDeviation.hpp
  *
- *  Created on: May 12, 2018
+ *  Created on: May 13, 2018
  *      Author: gab
  */
 
-#ifndef ACCELEROMETER_HPP_
-#define ACCELEROMETER_HPP_
+#ifndef CALCULATEDEVIATION_HPP_
+#define CALCULATEDEVIATION_HPP_
 
 #define __NOP __nop
+#include "globals.hpp"
 #include <ti/devices/msp432p4xx/inc/msp.h>//#include "msp.h"
 #include "Task.hpp"
+#include "Mailbox.hpp"
 
 
-class Accelerometer : public Task
+class CalculateDeviation : public Task
 {
     public:
-        //Accelerometer();
+        //CalculateDeviation();
         //uint16_t m_u16BITN;
         virtual uint8_t run(void);
         virtual uint8_t setup(void);
@@ -24,4 +26,6 @@ class Accelerometer : public Task
     private:
 };
 
-#endif /* ACCELEROMETER_HPP_ */
+
+
+#endif /* CALCULATEDEVIATION_HPP_ */

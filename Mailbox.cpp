@@ -25,6 +25,8 @@ extern "C"
     {
         st_Message l_stMessage;
 
+        m_stMessageQueue[i_u8MailboxID].bMessageValid=false;
+
         l_stMessage = m_stMessageQueue[i_u8MailboxID];
 
         return(l_stMessage);
