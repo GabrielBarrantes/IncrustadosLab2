@@ -8,17 +8,11 @@
 #include "globals.hpp"
 #include "RefreshScreen.hpp"
 #include <stdio.h>
-/*
-RefreshScreen::RefreshScreen()
-{
-    //m_u16BITN = i_BITN;
-}*/
 
 uint8_t RefreshScreen::run()
 {
     //#########################
-    // Trigger the conversion in the ADC,
-
+    // Read the message, and retrieve h
     int32_t l_h;
     st_Message l_stMessage;
 
@@ -40,20 +34,18 @@ uint8_t RefreshScreen::run()
 
     Graphics_setForegroundColor(&g_sContext, 0x00DAA520);
     Graphics_drawLineH(&g_sContext, 0, 127, 64-currentH+1);
-
     ////
     ////
-
     Graphics_setForegroundColor(&g_sContext, 0x00FFFFFF);
-    Graphics_drawLineH(&g_sContext, 44, 84, 64+31);// 30 grados
-    Graphics_drawLineH(&g_sContext, 54, 74, 64+21);// 20 grados
-    Graphics_drawLineH(&g_sContext, 44, 84, 64+11);// 10 grados
-    Graphics_drawLineH(&g_sContext, 54, 74, 64+54);// 60 grados
-    Graphics_drawLineH(&g_sContext, 44, 84, 64-31);//-30 grados
-    Graphics_drawLineH(&g_sContext, 54, 74, 64-21);//-20 grados
-    Graphics_drawLineH(&g_sContext, 44, 84, 64-11);//-10 grados
-    Graphics_drawLineH(&g_sContext, 54, 74, 64-54);//-60 grados
-/*
+    Graphics_drawLineH(&g_sContext, 48, 80, 64+31);// 30 grados
+    Graphics_drawLineH(&g_sContext, 58, 70, 64+21);// 20 grados
+    Graphics_drawLineH(&g_sContext, 48, 80, 64+11);// 10 grados
+    Graphics_drawLineH(&g_sContext, 58, 70, 64+54);// 60 grados
+    Graphics_drawLineH(&g_sContext, 48, 80, 64-31);//-30 grados
+    Graphics_drawLineH(&g_sContext, 58, 70, 64-21);//-20 grados
+    Graphics_drawLineH(&g_sContext, 48, 80, 64-11);//-10 grados
+    Graphics_drawLineH(&g_sContext, 58, 70, 64-54);//-60 grados
+/* Indicadores Numericos
     GrContextFontSet(&g_sContext, &g_sFontCm12);
     Graphics_drawStringCentered(&g_sContext,(int8_t *)"10",AUTO_STRING_LENGTH,36,75,TRANSPARENT_TEXT);
     Graphics_drawStringCentered(&g_sContext,(int8_t *)"30",AUTO_STRING_LENGTH,36,95,TRANSPARENT_TEXT);
@@ -69,8 +61,6 @@ uint8_t RefreshScreen::run()
     Graphics_drawStringCentered(&g_sContext,(int8_t *)"30",AUTO_STRING_LENGTH,92,33,TRANSPARENT_TEXT);
     Graphics_drawStringCentered(&g_sContext,(int8_t *)"60",AUTO_STRING_LENGTH,92,10,TRANSPARENT_TEXT);
 */
-
-
     }
 
     /*

@@ -31,7 +31,10 @@ uint8_t CalculateDeviation::run()
     yn=l_y-8192;
     zn=l_z-8192;
     uint32_t l_h;
-    h = (int32_t) (63 * yn / (sqrt(yn*yn+zn*zn)));
+    //h = (int32_t) (63 * yn / (sqrt(yn*yn+zn*zn)));
+
+    h = (int32_t) round (63 * yn / (sqrt(yn*yn+zn*zn)));
+
     l_h =(uint32_t) h;
     st_Message l_stMessage;
     l_stMessage.bMessageValid = true;
