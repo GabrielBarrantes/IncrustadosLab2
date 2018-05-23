@@ -35,16 +35,15 @@ void main(void)
     // - Run the overall setup function for the system
     Setup();
 
+    /////////////////////////////////////////////////////////////////////
+    // - Instantiate the Tasks
     Accelerometer AccelerometerXYZ;
     CalculateDeviation Deviation;
     RefreshScreen Screen;
-
-    /////////////////////////////////////////////////////////////////////
-    // - Instantiate the Tasks
     LED BlueLED(BIT2);
     //LED GreenLED(BIT1);
-    // - Attach the Tasks to the Scheduler;
 
+    // - Attach the Tasks to the Scheduler;
     //////////////////////////////////////////////////////////////////////////////////////////
     g_MainScheduler.attach(& AccelerometerXYZ, TaskType_Periodic,TaskActiveTrue,1);
     g_MainScheduler.attach(& Deviation, TaskType_Periodic,TaskActiveTrue,1);
